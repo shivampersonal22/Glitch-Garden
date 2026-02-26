@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glitch Garden — Settings</title>
+  <link rel="stylesheet" href="options.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⚙️ Glitch Garden Settings</h1>
+      <div class="header-actions">
+        <span id="proStatus" class="pro-badge">Free Plan</span>
+        <button id="upgradeBtn" class="btn-primary">Upgrade to Pro</button>
+      </div>
+    </header>
+    
+    <div class="settings-grid">
+      <!-- General Settings -->
+      <div class="settings-card">
+        <h2>General</h2>
+        
+        <div class="setting-item">
+          <label for="defaultIntensity">Default Intensity</label>
+          <div class="slider-container">
+            <input type="range" id="defaultIntensity" min="0" max="100" value="25">
+            <span id="intensityDisplay">25%</span>
+          </div>
+        </div>
+        
+        <div class="setting-item">
+          <label>
+            <input type="checkbox" id="enableOnStartup" checked>
+            Enable Glitches on Startup
+          </label>
+        </div>
+        
+        <div class="setting-item">
+          <label>
+            <input type="checkbox" id="autoSaveRecipes" checked>
+            Auto-save Community Recipes
+          </label>
+        </div>
+      </div>
+      
+      <!-- Garden Settings -->
+      <div class="settings-card">
+        <h2>🌱 Garden</h2>
+        
+        <div class="setting-item">
+          <label for="gardenTheme">Garden Theme</label>
+          <select id="gardenTheme">
+            <option value="default">Default (Green)</option>
+            <option value="desert">Desert (Warm)</option>
+            <option value="rainforest">Rainforest (Lush)</option>
+            <option value="moonlight">Moonlight (Blue)</option>
+            <option value="cosmic">Cosmic (Pro)</option>
+          </select>
+        </div>
+        
+        <div class="setting-item">
+          <label>
+            <input type="checkbox" id="showFlowerNames" checked>
+            Show Flower Names in Garden
+          </label>
+        </div>
+        
+        <div class="setting-item">
+          <label>
+            <input type="checkbox" id="gardenAnimations" checked>
+            Enable Garden Animations
+          </label>
+        </div>
+        
+        <div class="setting-item">
+          <button id="resetGardenBtn" class="btn-secondary">Reset Garden</button>
+          <p class="setting-note">This will delete all your flowers</p>
+        </div>
+      </div>
+      
+      <!-- Accessibility -->
+      <div class="settings-card">
+        <h2>♿ Accessibility</h2>
+        
+        <div class="setting-item">
+          <label>
+            <input type="checkbox" id="dyslexiaFont">
+            Use Dyslexia-Friendly Font
+          </label>
+        </div>
+        
+        <div class="setting-item">
+          <label>
+            <input type="checkbox" id="highContrast">
+            High Contrast Mode
+          </label>
+        </div>
+        
+        <div class="setting-item">
+          <label>
+            <input type="checkbox" id="reducedMotion">
+            Reduced Motion (Disables glitches)
+          </label>
+          <p class="setting-note">Overrides all glitch effects</p>
+        </div>
+        
+        <div class="setting-item">
+          <label for="animationSpeed">Animation Speed</label>
+          <select id="animationSpeed">
+            <option value="1">Normal</option>
+            <option value="0.5">Slow</option>
+            <option value="0.25">Very Slow</option>
+            <option value="0">Paused</option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- Pro Features -->
+      <div class="settings-card pro-card">
+        <h2>✨ Pro Features</h2>
+        
+        <div class="pro-locked" id="proLocked">
+          <p>Upgrade to Pro to unlock:</p>
+          <ul>
+            <li>AI Word Swap (50+ languages)</li>
+            <li>404 Pranks with custom pages</li>
+            <li>Cosmic Garden Theme</li>
+            <li>Export/Import Recipes</li>
+            <li>Recipe Voting</li>
+            <li>No limits on saved recipes</li>
+          </ul>
+          <button id="proUpgradeBtn" class="btn-primary">Upgrade Now — $1/month</button>
+        </div>
+        
+        <div class="pro-unlocked" id="proUnlocked" style="display: none;">
+          <p>✅ Pro features activated</p>
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="aiWordSwap" checked>
+              Enable AI Word Swap
+            </label>
+          </div>
+          <div class="setting-item">
+            <label>
+              <input type="checkbox" id="custom404" checked>
+              Enable 404 Pranks
+            </label>
+          </div>
+          <div class="setting-item">
+            <label for="custom404Url">Custom 404 Redirect URL</label>
+            <input type="url" id="custom404Url" placeholder="https://your-funny-page.com">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Data & Privacy -->
+      <div class="settings-card">
+        <h2>🔒 Data & Privacy</h2>
+        
+        <div class="setting-item">
+          <p><strong>Storage Used:</strong> <span id="storageSize">0 KB</span></p>
+        </div>
+        
+        <div class="setting-item">
+          <button id="exportDataBtn" class="btn-secondary">Export All Data</button>
+          <button id="importDataBtn" class="btn-secondary">Import Data</button>
+        </div>
+        
+        <div class="setting-item">
+          <button id="clearDataBtn" class="btn-danger">Clear All Data</button>
+          <p class="setting-note warning">This cannot be undone</p>
+        </div>
+        
+        <div class="privacy-note">
+          <p>🔐 All data stored locally. No cloud sync. No tracking.</p>
+        </div>
+      </div>
+      
+      <!-- About -->
+      <div class="settings-card">
+        <h2>ℹ️ About</h2>
+        
+        <p><strong>Version:</strong> <span id="version">1.0.0</span></p>
+        <p><strong>Made with 🌱 in India</strong></p>
+        
+        <div class="about-links">
+          <a href="#" id="websiteLink">Website</a>
+          <a href="#" id="githubLink">GitHub</a>
+          <a href="#" id="supportLink">Buy Me a Coffee</a>
+        </div>
+        
+        <p class="license">MIT License — Free to modify, share, and remix</p>
+      </div>
+    </div>
+    
+    <footer>
+      <button id="saveSettings" class="btn-primary">Save Settings</button>
+      <button id="resetSettings" class="btn-secondary">Reset to Defaults</button>
+      <span id="saveStatus"></span>
+    </footer>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>
