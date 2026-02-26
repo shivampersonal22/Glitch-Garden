@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glitch Garden — Community Recipes</title>
+  <link rel="stylesheet" href="recipes.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📖 Glitch Recipes</h1>
+      <p class="subtitle">Community-made glitch combinations. Apply with one click.</p>
+    </header>
+    
+    <div class="recipes-tabs">
+      <button class="tab-btn active" data-tab="trending">🔥 Trending</button>
+      <button class="tab-btn" data-tab="newest">✨ Newest</button>
+      <button class="tab-btn" data-tab="popular">⭐ Most Used</button>
+      <button class="tab-btn" data-tab="my">🌱 My Recipes</button>
+    </div>
+    
+    <div class="recipes-grid" id="recipesGrid">
+      <!-- Recipes will be loaded here -->
+    </div>
+    
+    <div class="create-recipe">
+      <h2>Create Your Own Recipe</h2>
+      
+      <div class="recipe-form">
+        <div class="form-group">
+          <label for="recipeName">Recipe Name</label>
+          <input type="text" id="recipeName" placeholder="e.g., Chaos Mode, Relax Mode">
+        </div>
+        
+        <div class="form-group">
+          <label>Glitch Settings</label>
+          <div class="recipe-effects">
+            <label><input type="checkbox" id="recipeWiggle"> Wiggle (10%+)</label>
+            <label><input type="checkbox" id="recipePixel"> Pixel Filter (25%+)</label>
+            <label><input type="checkbox" id="recipeWord"> Word Swap (50%+, Pro)</label>
+            <label><input type="checkbox" id="recipeRotate"> Rotate (75%+)</label>
+            <label><input type="checkbox" id="recipeColor"> Color Shift (40%+)</label>
+            <label><input type="checkbox" id="recipeWobble"> Wobble (30%+)</label>
+            <label><input type="checkbox" id="recipeFloat"> Float (20%+)</label>
+            <label><input type="checkbox" id="recipe404"> 404 Pranks (80%+, Pro)</label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="recipeIntensity">Intensity Level</label>
+          <div class="slider-container">
+            <input type="range" id="recipeIntensity" min="0" max="100" value="50">
+            <span id="recipeIntensityDisplay">50%</span>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="recipeDescription">Description (optional)</label>
+          <textarea id="recipeDescription" rows="3" placeholder="What does this recipe do?"></textarea>
+        </div>
+        
+        <button id="saveRecipeBtn" class="btn-primary">💾 Save Recipe</button>
+        <p class="form-note">Recipes are stored locally (private) unless shared</p>
+      </div>
+    </div>
+    
+    <footer>
+      <a href="#" id="gardenLink">🌱 Back to Garden</a>
+      <a href="#" id="settingsLink">⚙️ Settings</a>
+      <a href="#" id="shareLink">📤 Share Recipe</a>
+    </footer>
+  </div>
+  
+  <script src="recipes.js"></script>
+</body>
+</html>
