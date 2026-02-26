@@ -1,0 +1,90 @@
+/* Glitch Garden - Content Styles */
+:root {
+  --glitch-wiggle-speed: 0.2s;
+  --glitch-pixel-size: 2px;
+  --glitch-rotate: 1deg;
+  --glitch-hue-shift: 180;
+}
+
+/* Wiggle Effect */
+.glitch-wiggle a:hover,
+.glitch-wiggle button:hover,
+.glitch-wiggle .interactable:hover {
+  animation: wiggle var(--glitch-wiggle-speed) infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(1deg); }
+  75% { transform: rotate(-1deg); }
+}
+
+/* Pixel Filter */
+.glitch-pixel img,
+.glitch-pixel video,
+.glitch-pixel canvas {
+  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="pixelate"><feFlood x="0" y="0" width="2" height="2"/></filter></svg>#pixelate');
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Rotate Effect */
+.glitch-rotate body {
+  transform: rotate(var(--glitch-rotate));
+  transition: transform 2s ease-in-out;
+}
+
+/* Color Shift */
+.glitch-color body {
+  filter: hue-rotate(var(--glitch-hue-shift));
+  animation: breathe 10s infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(var(--glitch-hue-shift)); }
+}
+
+/* Wobble Effect */
+.glitch-wobble p,
+.glitch-wobble h1,
+.glitch-wobble h2 {
+  animation: wobble 5s infinite;
+}
+
+@keyframes wobble {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+/* Float Effect */
+.glitch-float img,
+.glitch-float .card,
+.glitch-float div {
+  animation: float 3s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Accessibility: Dyslexia Font */
+.glitch-dyslexia {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.12em !important;
+  word-spacing: 0.16em !important;
+}
+
+/* Accessibility: High Contrast */
+.glitch-high-contrast {
+  filter: contrast(200%) brightness(120%) !important;
+}
+
+/* Accessibility: Reduced Motion */
+.glitch-reduced-motion * {
+  animation: none !important;
+  transition: none !important;
+}
