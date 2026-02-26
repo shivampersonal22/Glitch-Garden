@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glitch Garden — Your Garden</title>
+  <link rel="stylesheet" href="newtab.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🌱 Your Glitch Garden</h1>
+      <div class="header-stats">
+        <div class="stat">
+          <span class="stat-label">Play Time</span>
+          <span class="stat-value" id="playTime">0 min</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Flowers</span>
+          <span class="stat-value" id="flowerCount">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Last Watered</span>
+          <span class="stat-value" id="lastWatered">Today</span>
+        </div>
+      </div>
+    </header>
+    
+    <div class="garden-container">
+      <div class="garden-grid" id="gardenGrid">
+        <!-- Flowers will be rendered here -->
+      </div>
+      
+      <div class="garden-controls">
+        <button id="waterBtn" class="btn-primary" title="Water your garden (grows flowers faster)">
+          💧 Water Garden
+        </button>
+        <button id="scatterBtn" class="btn-secondary" title="Scatter random seeds">
+          🌱 Scatter Seeds
+        </button>
+        <button id="harvestBtn" class="btn-secondary" title="Harvest flowers for special seeds">
+          ✂️ Harvest
+        </button>
+      </div>
+    </div>
+    
+    <div class="garden-stats-detailed">
+      <h2>Garden Stats</h2>
+      
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Flower Types</h3>
+          <div class="flower-types" id="flowerTypes">
+            <div>🌼 Daisy: <span id="daisyCount">0</span></div>
+            <div>🌹 Rose: <span id="roseCount">0</span></div>
+            <div>🌷 Tulip: <span id="tulipCount">0</span></div>
+            <div>🌻 Sunflower: <span id="sunflowerCount">0</span></div>
+            <div>🌵 Cactus: <span id="cactusCount">0</span></div>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Glitch Types Unlocked</h3>
+          <div class="glitch-types" id="glitchTypes">
+            <div>🪄 Wiggle: <span id="wiggleCount">0</span></div>
+            <div>🎨 Pixel: <span id="pixelCount">0</span></div>
+            <div>✨ Word: <span id="wordCount">0</span></div>
+            <div>🔄 Rotate: <span id="rotateCount">0</span></div>
+            <div>🌈 Color: <span id="colorCount">0</span></div>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Achievements</h3>
+          <ul class="achievements" id="achievements">
+            <li class="locked">🌱 Novice Gardener (10 flowers)</li>
+            <li class="locked">🌿 Green Thumb (50 flowers)</li>
+            <li class="locked">🌳 Garden Master (100 flowers)</li>
+            <li class="locked">🌀 Glitch Addict (1 hour playtime)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="recent-activity">
+      <h2>Recent Activity</h2>
+      <div class="activity-feed" id="activityFeed">
+        <!-- Activity items will appear here -->
+      </div>
+    </div>
+    
+    <footer>
+      <a href="#" id="settingsLink">⚙️ Settings</a>
+      <a href="#" id="recipesLink">📖 Browse Recipes</a>
+      <a href="#" id="shareLink">📤 Share Garden</a>
+    </footer>
+  </div>
+  
+  <script src="newtab.js"></script>
+</body>
+</html>
