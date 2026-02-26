@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glitch Garden</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🌱 Glitch Garden</h1>
+      <button id="settingsBtn" class="icon-btn" title="Settings">⚙️</button>
+    </header>
+    
+    <div class="intensity-section">
+      <label for="intensity">Glitch Intensity: <span id="intensityValue">25%</span></label>
+      <input type="range" id="intensity" min="0" max="100" value="25" class="slider">
+    </div>
+    
+    <div class="effects-grid" id="effectsGrid">
+      <div class="effect-card" data-effect="wiggle">
+        <span class="effect-icon">🪄</span>
+        <span class="effect-name">Wiggle</span>
+        <span class="effect-badge">10%+</span>
+        <input type="checkbox" class="effect-toggle" id="effect-wiggle" checked>
+      </div>
+      
+      <div class="effect-card" data-effect="pixelFilter">
+        <span class="effect-icon">🎨</span>
+        <span class="effect-name">Pixel Filter</span>
+        <span class="effect-badge">25%+</span>
+        <input type="checkbox" class="effect-toggle" id="effect-pixelFilter" checked>
+      </div>
+      
+      <div class="effect-card pro" data-effect="wordSwap">
+        <span class="effect-icon">✨</span>
+        <span class="effect-name">Word Swap</span>
+        <span class="pro-badge">PRO</span>
+        <span class="effect-badge">50%+</span>
+        <input type="checkbox" class="effect-toggle" id="effect-wordSwap" disabled>
+      </div>
+      
+      <div class="effect-card" data-effect="rotate">
+        <span class="effect-icon">🔄</span>
+        <span class="effect-name">Rotate</span>
+        <span class="effect-badge">75%+</span>
+        <input type="checkbox" class="effect-toggle" id="effect-rotate" checked>
+      </div>
+      
+      <div class="effect-card" data-effect="colorShift">
+        <span class="effect-icon">🌈</span>
+        <span class="effect-name">Color Shift</span>
+        <span class="effect-badge">40%+</span>
+        <input type="checkbox" class="effect-toggle" id="effect-colorShift" checked>
+      </div>
+      
+      <div class="effect-card" data-effect="wobble">
+        <span class="effect-icon">🌀</span>
+        <span class="effect-name">Wobble</span>
+        <span class="effect-badge">30%+</span>
+        <input type="checkbox" class="effect-toggle" id="effect-wobble" checked>
+      </div>
+      
+      <div class="effect-card" data-effect="float">
+        <span class="effect-icon">☁️</span>
+        <span class="effect-name">Float</span>
+        <span class="effect-badge">20%+</span>
+        <input type="checkbox" class="effect-toggle" id="effect-float" checked>
+      </div>
+      
+      <div class="effect-card pro" data-effect="glitch404">
+        <span class="effect-icon">🚫</span>
+        <span class="effect-name">404 Pranks</span>
+        <span class="pro-badge">PRO</span>
+        <span class="effect-badge">80%+</span>
+        <input type="checkbox" class="effect-toggle" id="effect-glitch404" disabled>
+      </div>
+    </div>
+    
+    <div class="garden-preview">
+      <h3>Your Garden</h3>
+      <div class="flowers" id="flowerPreview">
+        <span class="flower">🌼</span>
+        <span class="flower">🌻</span>
+        <span class="flower">🌺</span>
+      </div>
+      <a href="#" id="viewGardenLink">View Full Garden →</a>
+    </div>
+    
+    <div class="recipes-preview">
+      <h3>Trending Recipes</h3>
+      <div class="recipe-list" id="recipeList">
+        <div class="recipe-item" data-recipe="chaos">
+          <span class="recipe-name">Chaos Mode</span>
+          <span class="recipe-badge">🔥 1.2k</span>
+        </div>
+        <div class="recipe-item" data-recipe="relax">
+          <span class="recipe-name">Relax Mode</span>
+          <span class="recipe-badge">🐢 856</span>
+        </div>
+        <div class="recipe-item" data-recipe="focus">
+          <span class="recipe-name">Focus Mode</span>
+          <span class="recipe-badge">🎯 623</span>
+        </div>
+      </div>
+      <a href="#" id="viewRecipesLink">Browse All →</a>
+    </div>
+    
+    <footer>
+      <div class="pro-prompt" id="proPrompt">
+        <p>✨ <strong>Go Pro</strong> — Unlock Word Swap & 404 Pranks</p>
+        <button id="upgradeBtn" class="btn-primary">$1/month</button>
+      </div>
+    </footer>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
